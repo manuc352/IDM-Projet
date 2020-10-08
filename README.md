@@ -1,9 +1,9 @@
 # IDM-Projet
 
-Sujet JSON
-Maud Garcon
-Emmanuel Chauvel
+### By Maud Garcon & Emmanuel Chauvel
 
-Metamodel
+## Sujet : JSON
 
-Xtext
+### Metamodel
+
+### Xtext
