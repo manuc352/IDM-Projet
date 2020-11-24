@@ -10,13 +10,13 @@ Json:
 		(pairs+=Pair)?
 		(PAIR_SEPARATION pairs+=Pair)*
 	RIGHT_BRACE
-	
-	fichier = Fichier
-	add = Add
-	search = Search
-	delete = Delete
-	read = Read	
+	operations+=JsonOperation*
 ;
+
+JsonOperation:
+	Fichier | Add | Search | Delete
+;
+
 	
 Pair:
 	key=STRING COLON_SEPARATION value=Value
@@ -48,26 +48,21 @@ JNumber:
 ;
 	
 Fichier:
-	fileID=ID '=' name=STRING
+	"file" fileID=ID '=' name=STRING
 ;
 
 Add:
-	keyId=ID '=' key=STRING
-	valueId=ID '=' value=STRING
+	"add" Pair
 ;
 
 Search:
-	keyId=ID '=' key=STRING
+	"search" keyId=ID '=' key=STRING
 ;
 
 Delete:
-	keyId=ID '=' key=STRING
-	valueId=ID '=' value=STRING
+	"delete" Pair
 ;
 
-Read:
-	Fichier //A modifier
-;
 
 terminal LEFT_BRACE : '{';
 terminal PAIR_SEPARATION : ';';
