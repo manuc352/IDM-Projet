@@ -10,7 +10,9 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Json/pairs"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Json/operations"/>
     </genClasses>
-    <genClasses ecoreClass="MyDsl.ecore#//JsonOperation"/>
+    <genClasses ecoreClass="MyDsl.ecore#//JsonOperation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//JsonOperation/fileID"/>
+    </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//Pair">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Pair/key"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Pair/value"/>
@@ -30,14 +32,17 @@
     </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//JNumber"/>
     <genClasses ecoreClass="MyDsl.ecore#//Fichier">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Fichier/fileID"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Fichier/name"/>
     </genClasses>
-    <genClasses ecoreClass="MyDsl.ecore#//Add"/>
+    <genClasses ecoreClass="MyDsl.ecore#//Add">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Add/pair"/>
+    </genClasses>
+    <genClasses ecoreClass="MyDsl.ecore#//Clear"/>
     <genClasses ecoreClass="MyDsl.ecore#//Search">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Search/keyId"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Search/key"/>
     </genClasses>
-    <genClasses ecoreClass="MyDsl.ecore#//Delete"/>
+    <genClasses ecoreClass="MyDsl.ecore#//Delete">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Delete/pair"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

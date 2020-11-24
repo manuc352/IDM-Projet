@@ -92,9 +92,6 @@ public class MyDslSwitch<T> extends Switch<T>
       {
         Pair pair = (Pair)theEObject;
         T result = casePair(pair);
-        if (result == null) result = caseAdd(pair);
-        if (result == null) result = caseDelete(pair);
-        if (result == null) result = caseJsonOperation(pair);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -158,6 +155,14 @@ public class MyDslSwitch<T> extends Switch<T>
         Add add = (Add)theEObject;
         T result = caseAdd(add);
         if (result == null) result = caseJsonOperation(add);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MyDslPackage.CLEAR:
+      {
+        Clear clear = (Clear)theEObject;
+        T result = caseClear(clear);
+        if (result == null) result = caseJsonOperation(clear);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -353,6 +358,22 @@ public class MyDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseAdd(Add object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Clear</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Clear</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseClear(Clear object)
   {
     return null;
   }

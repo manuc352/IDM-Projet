@@ -88,12 +88,13 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final RuleCall cAddParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cSearchParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		private final RuleCall cDeleteParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cClearParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		
 		//JsonOperation:
-		//	Fichier | Add | Search | Delete;
+		//	Fichier | Add | Search | Delete | Clear;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Fichier | Add | Search | Delete
+		//Fichier | Add | Search | Delete | Clear
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//Fichier
@@ -107,6 +108,9 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		
 		//Delete
 		public RuleCall getDeleteParserRuleCall_3() { return cDeleteParserRuleCall_3; }
+		
+		//Clear
+		public RuleCall getClearParserRuleCall_4() { return cClearParserRuleCall_4; }
 	}
 	public class PairElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.MyDsl.Pair");
@@ -368,49 +372,88 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.MyDsl.Add");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cAddKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final RuleCall cPairParserRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final Assignment cFileIDAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cFileIDIDTerminalRuleCall_1_0 = (RuleCall)cFileIDAssignment_1.eContents().get(0);
+		private final Keyword cCommaKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cPairAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cPairPairParserRuleCall_3_0 = (RuleCall)cPairAssignment_3.eContents().get(0);
 		
 		//Add:
-		//	"add" Pair;
+		//	"add" fileID=ID "," pair=Pair;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"add" Pair
+		//"add" fileID=ID "," pair=Pair
 		public Group getGroup() { return cGroup; }
 		
 		//"add"
 		public Keyword getAddKeyword_0() { return cAddKeyword_0; }
 		
+		//fileID=ID
+		public Assignment getFileIDAssignment_1() { return cFileIDAssignment_1; }
+		
+		//ID
+		public RuleCall getFileIDIDTerminalRuleCall_1_0() { return cFileIDIDTerminalRuleCall_1_0; }
+		
+		//","
+		public Keyword getCommaKeyword_2() { return cCommaKeyword_2; }
+		
+		//pair=Pair
+		public Assignment getPairAssignment_3() { return cPairAssignment_3; }
+		
 		//Pair
-		public RuleCall getPairParserRuleCall_1() { return cPairParserRuleCall_1; }
+		public RuleCall getPairPairParserRuleCall_3_0() { return cPairPairParserRuleCall_3_0; }
+	}
+	public class ClearElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.MyDsl.Clear");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cClearKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cFileIDAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cFileIDIDTerminalRuleCall_1_0 = (RuleCall)cFileIDAssignment_1.eContents().get(0);
+		
+		//Clear:
+		//	"clear" fileID=ID;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//"clear" fileID=ID
+		public Group getGroup() { return cGroup; }
+		
+		//"clear"
+		public Keyword getClearKeyword_0() { return cClearKeyword_0; }
+		
+		//fileID=ID
+		public Assignment getFileIDAssignment_1() { return cFileIDAssignment_1; }
+		
+		//ID
+		public RuleCall getFileIDIDTerminalRuleCall_1_0() { return cFileIDIDTerminalRuleCall_1_0; }
 	}
 	public class SearchElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.MyDsl.Search");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cSearchKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cKeyIdAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cKeyIdIDTerminalRuleCall_1_0 = (RuleCall)cKeyIdAssignment_1.eContents().get(0);
-		private final Keyword cEqualsSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cFileIDAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cFileIDIDTerminalRuleCall_1_0 = (RuleCall)cFileIDAssignment_1.eContents().get(0);
+		private final Keyword cCommaKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cKeyAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cKeySTRINGTerminalRuleCall_3_0 = (RuleCall)cKeyAssignment_3.eContents().get(0);
 		
 		//Search:
-		//	"search" keyId=ID '=' key=STRING;
+		//	"search" fileID=ID "," key=STRING;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"search" keyId=ID '=' key=STRING
+		//"search" fileID=ID "," key=STRING
 		public Group getGroup() { return cGroup; }
 		
 		//"search"
 		public Keyword getSearchKeyword_0() { return cSearchKeyword_0; }
 		
-		//keyId=ID
-		public Assignment getKeyIdAssignment_1() { return cKeyIdAssignment_1; }
+		//fileID=ID
+		public Assignment getFileIDAssignment_1() { return cFileIDAssignment_1; }
 		
 		//ID
-		public RuleCall getKeyIdIDTerminalRuleCall_1_0() { return cKeyIdIDTerminalRuleCall_1_0; }
+		public RuleCall getFileIDIDTerminalRuleCall_1_0() { return cFileIDIDTerminalRuleCall_1_0; }
 		
-		//'='
-		public Keyword getEqualsSignKeyword_2() { return cEqualsSignKeyword_2; }
+		//","
+		public Keyword getCommaKeyword_2() { return cCommaKeyword_2; }
 		
 		//key=STRING
 		public Assignment getKeyAssignment_3() { return cKeyAssignment_3; }
@@ -422,20 +465,36 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.MyDsl.Delete");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cDeleteKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final RuleCall cPairParserRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final Assignment cFileIDAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cFileIDIDTerminalRuleCall_1_0 = (RuleCall)cFileIDAssignment_1.eContents().get(0);
+		private final Keyword cCommaKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cPairAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cPairPairParserRuleCall_3_0 = (RuleCall)cPairAssignment_3.eContents().get(0);
 		
 		//Delete:
-		//	"delete" Pair;
+		//	"delete" fileID=ID "," pair=Pair;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"delete" Pair
+		//"delete" fileID=ID "," pair=Pair
 		public Group getGroup() { return cGroup; }
 		
 		//"delete"
 		public Keyword getDeleteKeyword_0() { return cDeleteKeyword_0; }
 		
+		//fileID=ID
+		public Assignment getFileIDAssignment_1() { return cFileIDAssignment_1; }
+		
+		//ID
+		public RuleCall getFileIDIDTerminalRuleCall_1_0() { return cFileIDIDTerminalRuleCall_1_0; }
+		
+		//","
+		public Keyword getCommaKeyword_2() { return cCommaKeyword_2; }
+		
+		//pair=Pair
+		public Assignment getPairAssignment_3() { return cPairAssignment_3; }
+		
 		//Pair
-		public RuleCall getPairParserRuleCall_1() { return cPairParserRuleCall_1; }
+		public RuleCall getPairPairParserRuleCall_3_0() { return cPairPairParserRuleCall_3_0; }
 	}
 	
 	
@@ -450,6 +509,7 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	private final JNumberElements pJNumber;
 	private final FichierElements pFichier;
 	private final AddElements pAdd;
+	private final ClearElements pClear;
 	private final SearchElements pSearch;
 	private final DeleteElements pDelete;
 	private final TerminalRule tLEFT_BRACE;
@@ -479,6 +539,7 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		this.pJNumber = new JNumberElements();
 		this.pFichier = new FichierElements();
 		this.pAdd = new AddElements();
+		this.pClear = new ClearElements();
 		this.pSearch = new SearchElements();
 		this.pDelete = new DeleteElements();
 		this.tLEFT_BRACE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.MyDsl.LEFT_BRACE");
@@ -530,7 +591,7 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	//JsonOperation:
-	//	Fichier | Add | Search | Delete;
+	//	Fichier | Add | Search | Delete | Clear;
 	public JsonOperationElements getJsonOperationAccess() {
 		return pJsonOperation;
 	}
@@ -620,7 +681,7 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	//Add:
-	//	"add" Pair;
+	//	"add" fileID=ID "," pair=Pair;
 	public AddElements getAddAccess() {
 		return pAdd;
 	}
@@ -629,8 +690,18 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		return getAddAccess().getRule();
 	}
 	
+	//Clear:
+	//	"clear" fileID=ID;
+	public ClearElements getClearAccess() {
+		return pClear;
+	}
+	
+	public ParserRule getClearRule() {
+		return getClearAccess().getRule();
+	}
+	
 	//Search:
-	//	"search" keyId=ID '=' key=STRING;
+	//	"search" fileID=ID "," key=STRING;
 	public SearchElements getSearchAccess() {
 		return pSearch;
 	}
@@ -640,7 +711,7 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	//Delete:
-	//	"delete" Pair;
+	//	"delete" fileID=ID "," pair=Pair;
 	public DeleteElements getDeleteAccess() {
 		return pDelete;
 	}

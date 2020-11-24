@@ -3,6 +3,7 @@
  */
 package org.xtext.example.mydsl.myDsl;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,7 +22,7 @@ package org.xtext.example.mydsl.myDsl;
  * @model
  * @generated
  */
-public interface Pair extends Add, Delete
+public interface Pair extends EObject
 {
   /**
    * Returns the value of the '<em><b>Key</b></em>' attribute.

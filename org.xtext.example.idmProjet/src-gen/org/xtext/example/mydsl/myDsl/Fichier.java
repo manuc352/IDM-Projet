@@ -13,7 +13,6 @@ package org.xtext.example.mydsl.myDsl;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.mydsl.myDsl.Fichier#getFileID <em>File ID</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.Fichier#getName <em>Name</em>}</li>
  * </ul>
  *
@@ -23,28 +22,6 @@ package org.xtext.example.mydsl.myDsl;
  */
 public interface Fichier extends JsonOperation
 {
-  /**
-   * Returns the value of the '<em><b>File ID</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>File ID</em>' attribute.
-   * @see #setFileID(String)
-   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getFichier_FileID()
-   * @model
-   * @generated
-   */
-  String getFileID();
-
-  /**
-   * Sets the value of the '{@link org.xtext.example.mydsl.myDsl.Fichier#getFileID <em>File ID</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>File ID</em>' attribute.
-   * @see #getFileID()
-   * @generated
-   */
-  void setFileID(String value);
-
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->

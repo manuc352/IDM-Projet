@@ -123,6 +123,15 @@ public interface MyDslFactory extends EFactory
   Add createAdd();
 
   /**
+   * Returns a new object of class '<em>Clear</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Clear</em>'.
+   * @generated
+   */
+  Clear createClear();
+
+  /**
    * Returns a new object of class '<em>Search</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

@@ -10,6 +10,12 @@ import org.eclipse.emf.ecore.EObject;
  * A representation of the model object '<em><b>Json Operation</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.JsonOperation#getFileID <em>File ID</em>}</li>
+ * </ul>
  *
  * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getJsonOperation()
  * @model
@@ -17,4 +23,26 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface JsonOperation extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>File ID</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>File ID</em>' attribute.
+   * @see #setFileID(String)
+   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getJsonOperation_FileID()
+   * @model
+   * @generated
+   */
+  String getFileID();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.mydsl.myDsl.JsonOperation#getFileID <em>File ID</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>File ID</em>' attribute.
+   * @see #getFileID()
+   * @generated
+   */
+  void setFileID(String value);
+
 } // JsonOperation

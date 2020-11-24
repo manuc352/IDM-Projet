@@ -14,7 +14,7 @@ Json:
 ;
 
 JsonOperation:
-	Fichier | Add | Search | Delete
+	Fichier | Add | Search | Delete | Clear
 ;
 
 	
@@ -52,15 +52,19 @@ Fichier:
 ;
 
 Add:
-	"add" Pair
+	"add" fileID=ID "," pair=Pair
+;
+
+Clear:
+	"clear" fileID=ID
 ;
 
 Search:
-	"search" keyId=ID '=' key=STRING
+	"search" fileID=ID "," key=STRING
 ;
 
 Delete:
-	"delete" Pair
+	"delete" fileID=ID "," pair=Pair
 ;
 
 

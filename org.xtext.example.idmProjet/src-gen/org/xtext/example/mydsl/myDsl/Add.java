@@ -9,6 +9,12 @@ package org.xtext.example.mydsl.myDsl;
  * A representation of the model object '<em><b>Add</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.Add#getPair <em>Pair</em>}</li>
+ * </ul>
  *
  * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getAdd()
  * @model
@@ -16,4 +22,26 @@ package org.xtext.example.mydsl.myDsl;
  */
 public interface Add extends JsonOperation
 {
+  /**
+   * Returns the value of the '<em><b>Pair</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Pair</em>' containment reference.
+   * @see #setPair(Pair)
+   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getAdd_Pair()
+   * @model containment="true"
+   * @generated
+   */
+  Pair getPair();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.mydsl.myDsl.Add#getPair <em>Pair</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Pair</em>' containment reference.
+   * @see #getPair()
+   * @generated
+   */
+  void setPair(Pair value);
+
 } // Add

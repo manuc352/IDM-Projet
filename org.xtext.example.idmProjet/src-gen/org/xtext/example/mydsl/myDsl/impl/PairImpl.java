@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.example.mydsl.myDsl.MyDslPackage;
 import org.xtext.example.mydsl.myDsl.Pair;
@@ -29,7 +30,7 @@ import org.xtext.example.mydsl.myDsl.Value;
  *
  * @generated
  */
-public class PairImpl extends AddImpl implements Pair
+public class PairImpl extends MinimalEObjectImpl.Container implements Pair
 {
   /**
    * The default value of the '{@link #getKey() <em>Key</em>}' attribute.

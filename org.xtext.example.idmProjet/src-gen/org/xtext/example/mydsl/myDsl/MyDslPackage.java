@@ -124,32 +124,22 @@ public interface MyDslPackage extends EPackage
   int JSON_OPERATION = 1;
 
   /**
+   * The feature id for the '<em><b>File ID</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int JSON_OPERATION__FILE_ID = 0;
+
+  /**
    * The number of structural features of the '<em>Json Operation</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int JSON_OPERATION_FEATURE_COUNT = 0;
-
-  /**
-   * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.AddImpl <em>Add</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.example.mydsl.myDsl.impl.AddImpl
-   * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getAdd()
-   * @generated
-   */
-  int ADD = 10;
-
-  /**
-   * The number of structural features of the '<em>Add</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ADD_FEATURE_COUNT = JSON_OPERATION_FEATURE_COUNT + 0;
+  int JSON_OPERATION_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.PairImpl <em>Pair</em>}' class.
@@ -168,7 +158,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PAIR__KEY = ADD_FEATURE_COUNT + 0;
+  int PAIR__KEY = 0;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -177,7 +167,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PAIR__VALUE = ADD_FEATURE_COUNT + 1;
+  int PAIR__VALUE = 1;
 
   /**
    * The number of structural features of the '<em>Pair</em>' class.
@@ -186,7 +176,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PAIR_FEATURE_COUNT = ADD_FEATURE_COUNT + 2;
+  int PAIR_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.JStringImpl <em>JString</em>}' class.
@@ -336,7 +326,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FICHIER__FILE_ID = JSON_OPERATION_FEATURE_COUNT + 0;
+  int FICHIER__FILE_ID = JSON_OPERATION__FILE_ID;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -345,7 +335,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FICHIER__NAME = JSON_OPERATION_FEATURE_COUNT + 1;
+  int FICHIER__NAME = JSON_OPERATION_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Fichier</em>' class.
@@ -354,7 +344,72 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FICHIER_FEATURE_COUNT = JSON_OPERATION_FEATURE_COUNT + 2;
+  int FICHIER_FEATURE_COUNT = JSON_OPERATION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.AddImpl <em>Add</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl.myDsl.impl.AddImpl
+   * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getAdd()
+   * @generated
+   */
+  int ADD = 10;
+
+  /**
+   * The feature id for the '<em><b>File ID</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ADD__FILE_ID = JSON_OPERATION__FILE_ID;
+
+  /**
+   * The feature id for the '<em><b>Pair</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ADD__PAIR = JSON_OPERATION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Add</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ADD_FEATURE_COUNT = JSON_OPERATION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.ClearImpl <em>Clear</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl.myDsl.impl.ClearImpl
+   * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getClear()
+   * @generated
+   */
+  int CLEAR = 11;
+
+  /**
+   * The feature id for the '<em><b>File ID</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLEAR__FILE_ID = JSON_OPERATION__FILE_ID;
+
+  /**
+   * The number of structural features of the '<em>Clear</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLEAR_FEATURE_COUNT = JSON_OPERATION_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.SearchImpl <em>Search</em>}' class.
@@ -364,16 +419,16 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getSearch()
    * @generated
    */
-  int SEARCH = 11;
+  int SEARCH = 12;
 
   /**
-   * The feature id for the '<em><b>Key Id</b></em>' attribute.
+   * The feature id for the '<em><b>File ID</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SEARCH__KEY_ID = JSON_OPERATION_FEATURE_COUNT + 0;
+  int SEARCH__FILE_ID = JSON_OPERATION__FILE_ID;
 
   /**
    * The feature id for the '<em><b>Key</b></em>' attribute.
@@ -382,7 +437,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SEARCH__KEY = JSON_OPERATION_FEATURE_COUNT + 1;
+  int SEARCH__KEY = JSON_OPERATION_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Search</em>' class.
@@ -391,7 +446,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SEARCH_FEATURE_COUNT = JSON_OPERATION_FEATURE_COUNT + 2;
+  int SEARCH_FEATURE_COUNT = JSON_OPERATION_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.DeleteImpl <em>Delete</em>}' class.
@@ -401,7 +456,25 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getDelete()
    * @generated
    */
-  int DELETE = 12;
+  int DELETE = 13;
+
+  /**
+   * The feature id for the '<em><b>File ID</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DELETE__FILE_ID = JSON_OPERATION__FILE_ID;
+
+  /**
+   * The feature id for the '<em><b>Pair</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DELETE__PAIR = JSON_OPERATION_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Delete</em>' class.
@@ -410,7 +483,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DELETE_FEATURE_COUNT = JSON_OPERATION_FEATURE_COUNT + 0;
+  int DELETE_FEATURE_COUNT = JSON_OPERATION_FEATURE_COUNT + 1;
 
 
   /**
@@ -454,6 +527,17 @@ public interface MyDslPackage extends EPackage
    * @generated
    */
   EClass getJsonOperation();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.myDsl.JsonOperation#getFileID <em>File ID</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>File ID</em>'.
+   * @see org.xtext.example.mydsl.myDsl.JsonOperation#getFileID()
+   * @see #getJsonOperation()
+   * @generated
+   */
+  EAttribute getJsonOperation_FileID();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.Pair <em>Pair</em>}'.
@@ -602,17 +686,6 @@ public interface MyDslPackage extends EPackage
   EClass getFichier();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.myDsl.Fichier#getFileID <em>File ID</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>File ID</em>'.
-   * @see org.xtext.example.mydsl.myDsl.Fichier#getFileID()
-   * @see #getFichier()
-   * @generated
-   */
-  EAttribute getFichier_FileID();
-
-  /**
    * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.myDsl.Fichier#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -634,6 +707,27 @@ public interface MyDslPackage extends EPackage
   EClass getAdd();
 
   /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.myDsl.Add#getPair <em>Pair</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Pair</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Add#getPair()
+   * @see #getAdd()
+   * @generated
+   */
+  EReference getAdd_Pair();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.Clear <em>Clear</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Clear</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Clear
+   * @generated
+   */
+  EClass getClear();
+
+  /**
    * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.Search <em>Search</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -642,17 +736,6 @@ public interface MyDslPackage extends EPackage
    * @generated
    */
   EClass getSearch();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.myDsl.Search#getKeyId <em>Key Id</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Key Id</em>'.
-   * @see org.xtext.example.mydsl.myDsl.Search#getKeyId()
-   * @see #getSearch()
-   * @generated
-   */
-  EAttribute getSearch_KeyId();
 
   /**
    * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.myDsl.Search#getKey <em>Key</em>}'.
@@ -674,6 +757,17 @@ public interface MyDslPackage extends EPackage
    * @generated
    */
   EClass getDelete();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.myDsl.Delete#getPair <em>Pair</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Pair</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Delete#getPair()
+   * @see #getDelete()
+   * @generated
+   */
+  EReference getDelete_Pair();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -733,6 +827,14 @@ public interface MyDslPackage extends EPackage
      * @generated
      */
     EClass JSON_OPERATION = eINSTANCE.getJsonOperation();
+
+    /**
+     * The meta object literal for the '<em><b>File ID</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute JSON_OPERATION__FILE_ID = eINSTANCE.getJsonOperation_FileID();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.PairImpl <em>Pair</em>}' class.
@@ -863,14 +965,6 @@ public interface MyDslPackage extends EPackage
     EClass FICHIER = eINSTANCE.getFichier();
 
     /**
-     * The meta object literal for the '<em><b>File ID</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FICHIER__FILE_ID = eINSTANCE.getFichier_FileID();
-
-    /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -889,6 +983,24 @@ public interface MyDslPackage extends EPackage
     EClass ADD = eINSTANCE.getAdd();
 
     /**
+     * The meta object literal for the '<em><b>Pair</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ADD__PAIR = eINSTANCE.getAdd_Pair();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.ClearImpl <em>Clear</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl.myDsl.impl.ClearImpl
+     * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getClear()
+     * @generated
+     */
+    EClass CLEAR = eINSTANCE.getClear();
+
+    /**
      * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.SearchImpl <em>Search</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -897,14 +1009,6 @@ public interface MyDslPackage extends EPackage
      * @generated
      */
     EClass SEARCH = eINSTANCE.getSearch();
-
-    /**
-     * The meta object literal for the '<em><b>Key Id</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute SEARCH__KEY_ID = eINSTANCE.getSearch_KeyId();
 
     /**
      * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
@@ -923,6 +1027,14 @@ public interface MyDslPackage extends EPackage
      * @generated
      */
     EClass DELETE = eINSTANCE.getDelete();
+
+    /**
+     * The meta object literal for the '<em><b>Pair</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DELETE__PAIR = eINSTANCE.getDelete_Pair();
 
   }
 

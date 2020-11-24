@@ -13,7 +13,6 @@ package org.xtext.example.mydsl.myDsl;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.mydsl.myDsl.Search#getKeyId <em>Key Id</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.Search#getKey <em>Key</em>}</li>
  * </ul>
  *
@@ -23,28 +22,6 @@ package org.xtext.example.mydsl.myDsl;
  */
 public interface Search extends JsonOperation
 {
-  /**
-   * Returns the value of the '<em><b>Key Id</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Key Id</em>' attribute.
-   * @see #setKeyId(String)
-   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getSearch_KeyId()
-   * @model
-   * @generated
-   */
-  String getKeyId();
-
-  /**
-   * Sets the value of the '{@link org.xtext.example.mydsl.myDsl.Search#getKeyId <em>Key Id</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Key Id</em>' attribute.
-   * @see #getKeyId()
-   * @generated
-   */
-  void setKeyId(String value);
-
   /**
    * Returns the value of the '<em><b>Key</b></em>' attribute.
    * <!-- begin-user-doc -->

@@ -76,6 +76,7 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
       case MyDslPackage.JNUMBER: return createJNumber();
       case MyDslPackage.FICHIER: return createFichier();
       case MyDslPackage.ADD: return createAdd();
+      case MyDslPackage.CLEAR: return createClear();
       case MyDslPackage.SEARCH: return createSearch();
       case MyDslPackage.DELETE: return createDelete();
       default:
@@ -213,6 +214,18 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
   {
     AddImpl add = new AddImpl();
     return add;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Clear createClear()
+  {
+    ClearImpl clear = new ClearImpl();
+    return clear;
   }
 
   /**

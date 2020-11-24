@@ -20,7 +20,6 @@ import org.xtext.example.mydsl.myDsl.MyDslPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.mydsl.myDsl.impl.FichierImpl#getFileID <em>File ID</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.impl.FichierImpl#getName <em>Name</em>}</li>
  * </ul>
  *
@@ -28,26 +27,6 @@ import org.xtext.example.mydsl.myDsl.MyDslPackage;
  */
 public class FichierImpl extends JsonOperationImpl implements Fichier
 {
-  /**
-   * The default value of the '{@link #getFileID() <em>File ID</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getFileID()
-   * @generated
-   * @ordered
-   */
-  protected static final String FILE_ID_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getFileID() <em>File ID</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getFileID()
-   * @generated
-   * @ordered
-   */
-  protected String fileID = FILE_ID_EDEFAULT;
-
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -95,31 +74,6 @@ public class FichierImpl extends JsonOperationImpl implements Fichier
    * @generated
    */
   @Override
-  public String getFileID()
-  {
-    return fileID;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setFileID(String newFileID)
-  {
-    String oldFileID = fileID;
-    fileID = newFileID;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.FICHIER__FILE_ID, oldFileID, fileID));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public String getName()
   {
     return name;
@@ -149,8 +103,6 @@ public class FichierImpl extends JsonOperationImpl implements Fichier
   {
     switch (featureID)
     {
-      case MyDslPackage.FICHIER__FILE_ID:
-        return getFileID();
       case MyDslPackage.FICHIER__NAME:
         return getName();
     }
@@ -167,9 +119,6 @@ public class FichierImpl extends JsonOperationImpl implements Fichier
   {
     switch (featureID)
     {
-      case MyDslPackage.FICHIER__FILE_ID:
-        setFileID((String)newValue);
-        return;
       case MyDslPackage.FICHIER__NAME:
         setName((String)newValue);
         return;
@@ -187,9 +136,6 @@ public class FichierImpl extends JsonOperationImpl implements Fichier
   {
     switch (featureID)
     {
-      case MyDslPackage.FICHIER__FILE_ID:
-        setFileID(FILE_ID_EDEFAULT);
-        return;
       case MyDslPackage.FICHIER__NAME:
         setName(NAME_EDEFAULT);
         return;
@@ -207,8 +153,6 @@ public class FichierImpl extends JsonOperationImpl implements Fichier
   {
     switch (featureID)
     {
-      case MyDslPackage.FICHIER__FILE_ID:
-        return FILE_ID_EDEFAULT == null ? fileID != null : !FILE_ID_EDEFAULT.equals(fileID);
       case MyDslPackage.FICHIER__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
     }
@@ -226,9 +170,7 @@ public class FichierImpl extends JsonOperationImpl implements Fichier
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (fileID: ");
-    result.append(fileID);
-    result.append(", name: ");
+    result.append(" (name: ");
     result.append(name);
     result.append(')');
     return result.toString();

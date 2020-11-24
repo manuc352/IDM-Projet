@@ -1,14 +1,16 @@
+','=26
 '-'=21
 '.'=22
 '='=24
 'E'=19
 'add'=25
-'delete'=27
+'clear'=27
+'delete'=29
 'e'=20
 'false'=18
 'file'=23
-'null'=28
-'search'=26
+'null'=30
+'search'=28
 'true'=17
 RULE_ANY_OTHER=16
 RULE_COLON_SEPARATION=7
@@ -35,3 +37,5 @@ T__25=25
 T__26=26
 T__27=27
 T__28=28
+T__29=29
+T__30=30

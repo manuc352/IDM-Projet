@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.xtext.example.mydsl.myDsl.Add;
+import org.xtext.example.mydsl.myDsl.Clear;
 import org.xtext.example.mydsl.myDsl.Delete;
 import org.xtext.example.mydsl.myDsl.Fichier;
 import org.xtext.example.mydsl.myDsl.JArray;
@@ -110,6 +111,13 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * @generated
    */
   private EClass addEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass clearEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -230,6 +238,17 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
   public EClass getJsonOperation()
   {
     return jsonOperationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getJsonOperation_FileID()
+  {
+    return (EAttribute)jsonOperationEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -392,20 +411,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * @generated
    */
   @Override
-  public EAttribute getFichier_FileID()
-  {
-    return (EAttribute)fichierEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EAttribute getFichier_Name()
   {
-    return (EAttribute)fichierEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)fichierEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -425,6 +433,28 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * @generated
    */
   @Override
+  public EReference getAdd_Pair()
+  {
+    return (EReference)addEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getClear()
+  {
+    return clearEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getSearch()
   {
     return searchEClass;
@@ -436,20 +466,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * @generated
    */
   @Override
-  public EAttribute getSearch_KeyId()
-  {
-    return (EAttribute)searchEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EAttribute getSearch_Key()
   {
-    return (EAttribute)searchEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)searchEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -461,6 +480,17 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
   public EClass getDelete()
   {
     return deleteEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getDelete_Pair()
+  {
+    return (EReference)deleteEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -499,6 +529,7 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     createEReference(jsonEClass, JSON__OPERATIONS);
 
     jsonOperationEClass = createEClass(JSON_OPERATION);
+    createEAttribute(jsonOperationEClass, JSON_OPERATION__FILE_ID);
 
     pairEClass = createEClass(PAIR);
     createEAttribute(pairEClass, PAIR__KEY);
@@ -521,16 +552,18 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     jNumberEClass = createEClass(JNUMBER);
 
     fichierEClass = createEClass(FICHIER);
-    createEAttribute(fichierEClass, FICHIER__FILE_ID);
     createEAttribute(fichierEClass, FICHIER__NAME);
 
     addEClass = createEClass(ADD);
+    createEReference(addEClass, ADD__PAIR);
+
+    clearEClass = createEClass(CLEAR);
 
     searchEClass = createEClass(SEARCH);
-    createEAttribute(searchEClass, SEARCH__KEY_ID);
     createEAttribute(searchEClass, SEARCH__KEY);
 
     deleteEClass = createEClass(DELETE);
+    createEReference(deleteEClass, DELETE__PAIR);
   }
 
   /**
@@ -563,8 +596,6 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
 
     // Add supertypes to classes
     jsonEClass.getESuperTypes().add(this.getValue());
-    pairEClass.getESuperTypes().add(this.getAdd());
-    pairEClass.getESuperTypes().add(this.getDelete());
     jStringEClass.getESuperTypes().add(this.getValue());
     jArrayEClass.getESuperTypes().add(this.getValue());
     jBooleanEClass.getESuperTypes().add(this.getValue());
@@ -572,6 +603,7 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     jNumberEClass.getESuperTypes().add(this.getValue());
     fichierEClass.getESuperTypes().add(this.getJsonOperation());
     addEClass.getESuperTypes().add(this.getJsonOperation());
+    clearEClass.getESuperTypes().add(this.getJsonOperation());
     searchEClass.getESuperTypes().add(this.getJsonOperation());
     deleteEClass.getESuperTypes().add(this.getJsonOperation());
 
@@ -581,6 +613,7 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     initEReference(getJson_Operations(), this.getJsonOperation(), null, "operations", null, 0, -1, Json.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(jsonOperationEClass, JsonOperation.class, "JsonOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getJsonOperation_FileID(), ecorePackage.getEString(), "fileID", null, 0, 1, JsonOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(pairEClass, Pair.class, "Pair", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getPair_Key(), ecorePackage.getEString(), "key", null, 0, 1, Pair.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -603,16 +636,18 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     initEClass(jNumberEClass, JNumber.class, "JNumber", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(fichierEClass, Fichier.class, "Fichier", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getFichier_FileID(), ecorePackage.getEString(), "fileID", null, 0, 1, Fichier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getFichier_Name(), ecorePackage.getEString(), "name", null, 0, 1, Fichier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(addEClass, Add.class, "Add", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getAdd_Pair(), this.getPair(), null, "pair", null, 0, 1, Add.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(clearEClass, Clear.class, "Clear", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(searchEClass, Search.class, "Search", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getSearch_KeyId(), ecorePackage.getEString(), "keyId", null, 0, 1, Search.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSearch_Key(), ecorePackage.getEString(), "key", null, 0, 1, Search.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(deleteEClass, Delete.class, "Delete", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getDelete_Pair(), this.getPair(), null, "pair", null, 0, 1, Delete.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

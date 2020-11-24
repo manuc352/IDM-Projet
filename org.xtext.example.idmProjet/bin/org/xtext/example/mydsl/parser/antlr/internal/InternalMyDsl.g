@@ -208,6 +208,15 @@ ruleJsonOperation returns [EObject current=null]
 			$current = $this_Delete_3.current;
 			afterParserOrEnumRuleCall();
 		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getJsonOperationAccess().getClearParserRuleCall_4());
+		}
+		this_Clear_4=ruleClear
+		{
+			$current = $this_Clear_4.current;
+			afterParserOrEnumRuleCall();
+		}
 	)
 ;
 
@@ -685,14 +694,88 @@ ruleAdd returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getAddAccess().getAddKeyword_0());
 		}
+		(
+			(
+				lv_fileID_1_0=RULE_ID
+				{
+					newLeafNode(lv_fileID_1_0, grammarAccess.getAddAccess().getFileIDIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getAddRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"fileID",
+						lv_fileID_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		otherlv_2=','
 		{
-			newCompositeNode(grammarAccess.getAddAccess().getPairParserRuleCall_1());
+			newLeafNode(otherlv_2, grammarAccess.getAddAccess().getCommaKeyword_2());
 		}
-		this_Pair_1=rulePair
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getAddAccess().getPairPairParserRuleCall_3_0());
+				}
+				lv_pair_3_0=rulePair
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getAddRule());
+					}
+					set(
+						$current,
+						"pair",
+						lv_pair_3_0,
+						"org.xtext.example.mydsl.MyDsl.Pair");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleClear
+entryRuleClear returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getClearRule()); }
+	iv_ruleClear=ruleClear
+	{ $current=$iv_ruleClear.current; }
+	EOF;
+
+// Rule Clear
+ruleClear returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='clear'
 		{
-			$current = $this_Pair_1.current;
-			afterParserOrEnumRuleCall();
+			newLeafNode(otherlv_0, grammarAccess.getClearAccess().getClearKeyword_0());
 		}
+		(
+			(
+				lv_fileID_1_0=RULE_ID
+				{
+					newLeafNode(lv_fileID_1_0, grammarAccess.getClearAccess().getFileIDIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getClearRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"fileID",
+						lv_fileID_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
 	)
 ;
 
@@ -718,9 +801,9 @@ ruleSearch returns [EObject current=null]
 		}
 		(
 			(
-				lv_keyId_1_0=RULE_ID
+				lv_fileID_1_0=RULE_ID
 				{
-					newLeafNode(lv_keyId_1_0, grammarAccess.getSearchAccess().getKeyIdIDTerminalRuleCall_1_0());
+					newLeafNode(lv_fileID_1_0, grammarAccess.getSearchAccess().getFileIDIDTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
@@ -728,15 +811,15 @@ ruleSearch returns [EObject current=null]
 					}
 					setWithLastConsumed(
 						$current,
-						"keyId",
-						lv_keyId_1_0,
+						"fileID",
+						lv_fileID_1_0,
 						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
 		)
-		otherlv_2='='
+		otherlv_2=','
 		{
-			newLeafNode(otherlv_2, grammarAccess.getSearchAccess().getEqualsSignKeyword_2());
+			newLeafNode(otherlv_2, grammarAccess.getSearchAccess().getCommaKeyword_2());
 		}
 		(
 			(
@@ -779,14 +862,47 @@ ruleDelete returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getDeleteAccess().getDeleteKeyword_0());
 		}
+		(
+			(
+				lv_fileID_1_0=RULE_ID
+				{
+					newLeafNode(lv_fileID_1_0, grammarAccess.getDeleteAccess().getFileIDIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getDeleteRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"fileID",
+						lv_fileID_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		otherlv_2=','
 		{
-			newCompositeNode(grammarAccess.getDeleteAccess().getPairParserRuleCall_1());
+			newLeafNode(otherlv_2, grammarAccess.getDeleteAccess().getCommaKeyword_2());
 		}
-		this_Pair_1=rulePair
-		{
-			$current = $this_Pair_1.current;
-			afterParserOrEnumRuleCall();
-		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getDeleteAccess().getPairPairParserRuleCall_3_0());
+				}
+				lv_pair_3_0=rulePair
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getDeleteRule());
+					}
+					set(
+						$current,
+						"pair",
+						lv_pair_3_0,
+						"org.xtext.example.mydsl.MyDsl.Pair");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 	)
 ;
 

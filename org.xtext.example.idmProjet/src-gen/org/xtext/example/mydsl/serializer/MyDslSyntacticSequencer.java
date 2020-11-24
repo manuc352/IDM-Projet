@@ -22,7 +22,6 @@ import org.xtext.example.mydsl.services.MyDslGrammarAccess;
 public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected MyDslGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_Add_Delete_AddKeyword_0_or_DeleteKeyword_0;
 	protected AbstractElementAlias match_JNumber_FullStopKeyword_3_q;
 	protected AbstractElementAlias match_JNumber_HyphenMinusKeyword_1_q;
 	protected AbstractElementAlias match_JNumber_INTTerminalRuleCall_2_q;
@@ -31,7 +30,6 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (MyDslGrammarAccess) access;
-		match_Add_Delete_AddKeyword_0_or_DeleteKeyword_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getAddAccess().getAddKeyword_0()), new TokenAlias(false, false, grammarAccess.getDeleteAccess().getDeleteKeyword_0()));
 		match_JNumber_FullStopKeyword_3_q = new TokenAlias(false, true, grammarAccess.getJNumberAccess().getFullStopKeyword_3());
 		match_JNumber_HyphenMinusKeyword_1_q = new TokenAlias(false, true, grammarAccess.getJNumberAccess().getHyphenMinusKeyword_1());
 		match_JNumber_INTTerminalRuleCall_2_q = new TokenAlias(false, true, grammarAccess.getJNumberAccess().getINTTerminalRuleCall_2());
@@ -126,9 +124,7 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_Add_Delete_AddKeyword_0_or_DeleteKeyword_0.equals(syntax))
-				emit_Add_Delete_AddKeyword_0_or_DeleteKeyword_0(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_JNumber_FullStopKeyword_3_q.equals(syntax))
+			if (match_JNumber_FullStopKeyword_3_q.equals(syntax))
 				emit_JNumber_FullStopKeyword_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_JNumber_HyphenMinusKeyword_1_q.equals(syntax))
 				emit_JNumber_HyphenMinusKeyword_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
@@ -140,17 +136,6 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 		}
 	}
 
-	/**
-	 * Ambiguous syntax:
-	 *     'add' | 'delete'
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) key=STRING
-	 */
-	protected void emit_Add_Delete_AddKeyword_0_or_DeleteKeyword_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
 	/**
 	 * Ambiguous syntax:
 	 *     '.'?

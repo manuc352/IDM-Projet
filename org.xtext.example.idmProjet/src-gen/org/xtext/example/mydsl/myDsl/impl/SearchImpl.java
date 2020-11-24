@@ -20,7 +20,6 @@ import org.xtext.example.mydsl.myDsl.Search;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.mydsl.myDsl.impl.SearchImpl#getKeyId <em>Key Id</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.impl.SearchImpl#getKey <em>Key</em>}</li>
  * </ul>
  *
@@ -28,26 +27,6 @@ import org.xtext.example.mydsl.myDsl.Search;
  */
 public class SearchImpl extends JsonOperationImpl implements Search
 {
-  /**
-   * The default value of the '{@link #getKeyId() <em>Key Id</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getKeyId()
-   * @generated
-   * @ordered
-   */
-  protected static final String KEY_ID_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getKeyId() <em>Key Id</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getKeyId()
-   * @generated
-   * @ordered
-   */
-  protected String keyId = KEY_ID_EDEFAULT;
-
   /**
    * The default value of the '{@link #getKey() <em>Key</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -95,31 +74,6 @@ public class SearchImpl extends JsonOperationImpl implements Search
    * @generated
    */
   @Override
-  public String getKeyId()
-  {
-    return keyId;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setKeyId(String newKeyId)
-  {
-    String oldKeyId = keyId;
-    keyId = newKeyId;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.SEARCH__KEY_ID, oldKeyId, keyId));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public String getKey()
   {
     return key;
@@ -149,8 +103,6 @@ public class SearchImpl extends JsonOperationImpl implements Search
   {
     switch (featureID)
     {
-      case MyDslPackage.SEARCH__KEY_ID:
-        return getKeyId();
       case MyDslPackage.SEARCH__KEY:
         return getKey();
     }
@@ -167,9 +119,6 @@ public class SearchImpl extends JsonOperationImpl implements Search
   {
     switch (featureID)
     {
-      case MyDslPackage.SEARCH__KEY_ID:
-        setKeyId((String)newValue);
-        return;
       case MyDslPackage.SEARCH__KEY:
         setKey((String)newValue);
         return;
@@ -187,9 +136,6 @@ public class SearchImpl extends JsonOperationImpl implements Search
   {
     switch (featureID)
     {
-      case MyDslPackage.SEARCH__KEY_ID:
-        setKeyId(KEY_ID_EDEFAULT);
-        return;
       case MyDslPackage.SEARCH__KEY:
         setKey(KEY_EDEFAULT);
         return;
@@ -207,8 +153,6 @@ public class SearchImpl extends JsonOperationImpl implements Search
   {
     switch (featureID)
     {
-      case MyDslPackage.SEARCH__KEY_ID:
-        return KEY_ID_EDEFAULT == null ? keyId != null : !KEY_ID_EDEFAULT.equals(keyId);
       case MyDslPackage.SEARCH__KEY:
         return KEY_EDEFAULT == null ? key != null : !KEY_EDEFAULT.equals(key);
     }
@@ -226,9 +170,7 @@ public class SearchImpl extends JsonOperationImpl implements Search
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (keyId: ");
-    result.append(keyId);
-    result.append(", key: ");
+    result.append(" (key: ");
     result.append(key);
     result.append(')');
     return result.toString();

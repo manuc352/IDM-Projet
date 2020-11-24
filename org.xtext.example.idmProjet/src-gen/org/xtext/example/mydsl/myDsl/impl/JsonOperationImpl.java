@@ -3,8 +3,11 @@
  */
 package org.xtext.example.mydsl.myDsl.impl;
 
+import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.example.mydsl.myDsl.JsonOperation;
@@ -14,11 +17,37 @@ import org.xtext.example.mydsl.myDsl.MyDslPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Json Operation</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.impl.JsonOperationImpl#getFileID <em>File ID</em>}</li>
+ * </ul>
  *
  * @generated
  */
 public class JsonOperationImpl extends MinimalEObjectImpl.Container implements JsonOperation
 {
+  /**
+   * The default value of the '{@link #getFileID() <em>File ID</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getFileID()
+   * @generated
+   * @ordered
+   */
+  protected static final String FILE_ID_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getFileID() <em>File ID</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getFileID()
+   * @generated
+   * @ordered
+   */
+  protected String fileID = FILE_ID_EDEFAULT;
+
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -38,6 +67,114 @@ public class JsonOperationImpl extends MinimalEObjectImpl.Container implements J
   protected EClass eStaticClass()
   {
     return MyDslPackage.Literals.JSON_OPERATION;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getFileID()
+  {
+    return fileID;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setFileID(String newFileID)
+  {
+    String oldFileID = fileID;
+    fileID = newFileID;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.JSON_OPERATION__FILE_ID, oldFileID, fileID));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object eGet(int featureID, boolean resolve, boolean coreType)
+  {
+    switch (featureID)
+    {
+      case MyDslPackage.JSON_OPERATION__FILE_ID:
+        return getFileID();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eSet(int featureID, Object newValue)
+  {
+    switch (featureID)
+    {
+      case MyDslPackage.JSON_OPERATION__FILE_ID:
+        setFileID((String)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eUnset(int featureID)
+  {
+    switch (featureID)
+    {
+      case MyDslPackage.JSON_OPERATION__FILE_ID:
+        setFileID(FILE_ID_EDEFAULT);
+        return;
+    }
+    super.eUnset(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean eIsSet(int featureID)
+  {
+    switch (featureID)
+    {
+      case MyDslPackage.JSON_OPERATION__FILE_ID:
+        return FILE_ID_EDEFAULT == null ? fileID != null : !FILE_ID_EDEFAULT.equals(fileID);
+    }
+    return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (fileID: ");
+    result.append(fileID);
+    result.append(')');
+    return result.toString();
   }
 
 } //JsonOperationImpl
