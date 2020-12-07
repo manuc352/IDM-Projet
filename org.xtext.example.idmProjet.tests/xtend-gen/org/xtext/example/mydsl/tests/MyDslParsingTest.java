@@ -17,6 +17,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.xtext.example.mydsl.myDsl.Json;
 import org.xtext.example.mydsl.tests.MyDslInjectorProvider;
+import org.xtext.example.mydsl.tests.PythonCompiler;
 
 @ExtendWith(InjectionExtension.class)
 @InjectWith(MyDslInjectorProvider.class)
@@ -40,6 +41,8 @@ public class MyDslParsingTest {
       String _join = IterableExtensions.join(errors, ", ");
       _builder_1.append(_join);
       Assertions.assertTrue(_isEmpty, _builder_1.toString());
+      final PythonCompiler cmpPython = new PythonCompiler(result);
+      cmpPython.compileAndRun();
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
