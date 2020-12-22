@@ -2,8 +2,77 @@ grammar org.xtext.example.mydsl.MyDsl with org.eclipse.xtext.common.Terminals
 
 generate myDsl "http://www.xtext.org/example/mydsl/MyDsl"
 
-Model:
-	greetings+=Greeting*;
+
+
+Json:
+	{Json}
+	LEFT_BRACE
+		(pairs+=Pair)?
+		(PAIR_SEPARATION pairs+=Pair)*
+	RIGHT_BRACE
+	operations+=JsonOperation*
+;
+
+JsonOperation:
+	Fichier | Add | Search | Delete | Clear
+;
+
 	
-Greeting:
-	'Hello' name=ID '!';
+Pair:
+	key=STRING COLON_SEPARATION value=Value
+;
+
+Value:
+	Json | JString | JArray | JBoolean | Null | JNumber
+;
+
+JString:
+	val = STRING
+;
+
+JArray:
+	{JArray} LEFT_BRACKET (values+=Value)? (PAIR_SEPARATION values+=Value)* RIGHT_BRACKET
+;
+
+JBoolean:
+	val = ('true' | 'false')
+;
+
+Null:
+	val = 'null'
+;
+
+JNumber: 
+	{JNumber} '-'? INT? '.'? INT (('E'|'e') '-'? INT)?
+	
+;
+	
+Fichier:
+	"file" fileID=ID '=' name=STRING
+;
+
+Add:
+	"add" fileID=ID "," pair=Pair
+;
+
+Clear:
+	"clear" fileID=ID
+;
+
+Search:
+	"search" fileID=ID "," key=STRING
+;
+
+Delete:
+	"delete" fileID=ID "," pair=Pair
+;
+
+
+terminal LEFT_BRACE : '{';
+terminal PAIR_SEPARATION : ';';
+terminal RIGHT_BRACE : '}';
+terminal COLON_SEPARATION: ':';
+terminal LEFT_BRACKET: '[';
+terminal RIGHT_BRACKET: ']';
+
+	
