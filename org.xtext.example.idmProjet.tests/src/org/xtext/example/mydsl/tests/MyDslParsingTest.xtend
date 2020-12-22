@@ -12,7 +12,7 @@ import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.^extension.ExtendWith
 import org.xtext.example.mydsl.myDsl.Json
-
+import org.xtext.example.mydsl.myDsl.JsonOperation
 
 @ExtendWith(InjectionExtension)
 @InjectWith(MyDslInjectorProvider)
@@ -23,7 +23,7 @@ class MyDslParsingTest {
 	@Test
 	def void loadModel() {
 		val result = parseHelper.parse('''
-			Hello Xtext!
+			{} file f1 = "f1.json"
 		''')
 		Assertions.assertNotNull(result)
 		val errors = result.eResource.errors

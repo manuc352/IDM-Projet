@@ -5,7 +5,9 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.List;
 
+import org.xtext.example.mydsl.myDsl.Fichier;
 import org.xtext.example.mydsl.myDsl.Json;
 import org.xtext.example.mydsl.myDsl.JsonOperation;
 
@@ -16,14 +18,22 @@ public class PythonCompiler {
 	private Json _model;
 
 	PythonCompiler(Json model) {	
+		
 		_model = model;	
 	}
 	
 	public void compileAndRun() throws IOException {
 		//JsonOperation truc = _model.get;
 		// code generation
-		
-		String jsonFilename = _model.getOperations().get(0).getFileID();
+		List<JsonOperation> ops = _model.getOperations();
+		String jsonFilename ="";
+		for (JsonOperation op : ops) {
+			if (op instanceof Fichier) {
+				Fichier f = (Fichier) op;
+				jsonFilename = f.getFileID();
+			}
+		}
+		System.out.println(jsonFilename);
 		String pythonCode = "import pandas as pd\n" + 
 				"df = pd.read_json(\"" + jsonFilename + "\")\n" +
 				"print(df)";	

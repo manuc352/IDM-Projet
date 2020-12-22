@@ -30,7 +30,7 @@ public class MyDslParsingTest {
   public void loadModel() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("Hello Xtext!");
+      _builder.append("{} file f1 = \"f1.json\"");
       _builder.newLine();
       final Json result = this.parseHelper.parse(_builder);
       Assertions.assertNotNull(result);
