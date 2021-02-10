@@ -24,6 +24,7 @@ class MyDslParsingTest {
 	def void loadModel() {
 		val result = parseHelper.parse('''
 			{} file f1 = "f1.json"
+			
 		''')
 		Assertions.assertNotNull(result)
 		val errors = result.eResource.errors

@@ -7,9 +7,14 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.List;
 
+import org.xtext.example.mydsl.myDsl.Add;
+import org.xtext.example.mydsl.myDsl.Clear;
+import org.xtext.example.mydsl.myDsl.Delete;
 import org.xtext.example.mydsl.myDsl.Fichier;
 import org.xtext.example.mydsl.myDsl.Json;
 import org.xtext.example.mydsl.myDsl.JsonOperation;
+import org.xtext.example.mydsl.myDsl.Pair;
+import org.xtext.example.mydsl.myDsl.Search;
 
 import com.google.common.io.Files;
 
@@ -27,16 +32,30 @@ public class PythonCompiler {
 		// code generation
 		List<JsonOperation> ops = _model.getOperations();
 		String jsonFilename ="";
+		Pair valuesToAdd;
 		for (JsonOperation op : ops) {
 			if (op instanceof Fichier) {
 				Fichier f = (Fichier) op;
 				jsonFilename = f.getFileID();
 			}
+			else if (op instanceof Add) {
+				//valuesToAdd = ((Add) op).getPair();
+			}
+			else if (op instanceof Search) {
+				
+			}
+			else if (op instanceof Delete) {
+				
+			}
+			else if (op instanceof Clear) {
+				
+			}
 		}
-		System.out.println(jsonFilename);
-		String pythonCode = "import pandas as pd\n" + 
-				"df = pd.read_json(\"" + jsonFilename + "\")\n" +
-				"print(df)";	
+		//System.out.println(jsonFilename);
+		String pythonCode = "import pandas as pd\n" +
+				"df = pd.read_json(\"C:\\\\Users\\\\Emmanuel Chauvel\\\\Desktop\\\\" + jsonFilename + ".json\")\n" +
+				"print(\""+jsonFilename+"\")\n"+
+				"print(df)";
 		
 		
 		
@@ -54,7 +73,7 @@ public class PythonCompiler {
 		// execute the generated Python code
 		// roughly: exec "python foo.py"
 		
-		Process p = Runtime.getRuntime().exec("python " + PYTHON_OUTPUT);
+		Process p = Runtime.getRuntime().exec("py " + PYTHON_OUTPUT);
 	    
 		// output
 	    BufferedReader stdInput = new BufferedReader(new 

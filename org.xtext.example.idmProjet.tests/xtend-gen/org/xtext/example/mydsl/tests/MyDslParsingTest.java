@@ -32,6 +32,7 @@ public class MyDslParsingTest {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("{} file f1 = \"f1.json\"");
       _builder.newLine();
+      _builder.newLine();
       final Json result = this.parseHelper.parse(_builder);
       Assertions.assertNotNull(result);
       final EList<Resource.Diagnostic> errors = result.eResource().getErrors();
