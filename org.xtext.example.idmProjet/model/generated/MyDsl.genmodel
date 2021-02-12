@@ -15,7 +15,7 @@
     </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//Pair">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Pair/key"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Pair/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Pair/value"/>
     </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//Value"/>
     <genClasses ecoreClass="MyDsl.ecore#//JString">

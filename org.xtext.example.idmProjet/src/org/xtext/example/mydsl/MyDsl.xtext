@@ -19,7 +19,7 @@ JsonOperation:
 
 	
 Pair:
-	key=STRING COLON_SEPARATION value=Value
+	key=STRING COLON_SEPARATION value=STRING
 ;
 
 Value:

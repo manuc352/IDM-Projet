@@ -122,13 +122,13 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final RuleCall cKeySTRINGTerminalRuleCall_0_0 = (RuleCall)cKeyAssignment_0.eContents().get(0);
 		private final RuleCall cCOLON_SEPARATIONTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
 		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cValueValueParserRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
+		private final RuleCall cValueSTRINGTerminalRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
 		
 		//Pair:
-		//	key=STRING COLON_SEPARATION value=Value;
+		//	key=STRING COLON_SEPARATION value=STRING;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//key=STRING COLON_SEPARATION value=Value
+		//key=STRING COLON_SEPARATION value=STRING
 		public Group getGroup() { return cGroup; }
 		
 		//key=STRING
@@ -140,11 +140,11 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//COLON_SEPARATION
 		public RuleCall getCOLON_SEPARATIONTerminalRuleCall_1() { return cCOLON_SEPARATIONTerminalRuleCall_1; }
 		
-		//value=Value
+		//value=STRING
 		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
 		
-		//Value
-		public RuleCall getValueValueParserRuleCall_2_0() { return cValueValueParserRuleCall_2_0; }
+		//STRING
+		public RuleCall getValueSTRINGTerminalRuleCall_2_0() { return cValueSTRINGTerminalRuleCall_2_0; }
 	}
 	public class ValueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.MyDsl.Value");
@@ -604,7 +604,7 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	//Pair:
-	//	key=STRING COLON_SEPARATION value=Value;
+	//	key=STRING COLON_SEPARATION value=STRING;
 	public PairElements getPairAccess() {
 		return pPair;
 	}

@@ -264,7 +264,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     Pair returns Pair
 	 *
 	 * Constraint:
-	 *     (key=STRING value=Value)
+	 *     (key=STRING value=STRING)
 	 */
 	protected void sequence_Pair(ISerializationContext context, Pair semanticObject) {
 		if (errorAcceptor != null) {
@@ -275,7 +275,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getPairAccess().getKeySTRINGTerminalRuleCall_0_0(), semanticObject.getKey());
-		feeder.accept(grammarAccess.getPairAccess().getValueValueParserRuleCall_2_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getPairAccess().getValueSTRINGTerminalRuleCall_2_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	

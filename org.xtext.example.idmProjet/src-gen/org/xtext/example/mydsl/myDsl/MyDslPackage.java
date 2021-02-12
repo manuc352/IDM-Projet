@@ -161,7 +161,7 @@ public interface MyDslPackage extends EPackage
   int PAIR__KEY = 0;
 
   /**
-   * The feature id for the '<em><b>Value</b></em>' containment reference.
+   * The feature id for the '<em><b>Value</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -561,15 +561,15 @@ public interface MyDslPackage extends EPackage
   EAttribute getPair_Key();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.myDsl.Pair#getValue <em>Value</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.myDsl.Pair#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Value</em>'.
+   * @return the meta object for the attribute '<em>Value</em>'.
    * @see org.xtext.example.mydsl.myDsl.Pair#getValue()
    * @see #getPair()
    * @generated
    */
-  EReference getPair_Value();
+  EAttribute getPair_Value();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.Value <em>Value</em>}'.
@@ -855,12 +855,12 @@ public interface MyDslPackage extends EPackage
     EAttribute PAIR__KEY = eINSTANCE.getPair_Key();
 
     /**
-     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference PAIR__VALUE = eINSTANCE.getPair_Value();
+    EAttribute PAIR__VALUE = eINSTANCE.getPair_Value();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.ValueImpl <em>Value</em>}' class.

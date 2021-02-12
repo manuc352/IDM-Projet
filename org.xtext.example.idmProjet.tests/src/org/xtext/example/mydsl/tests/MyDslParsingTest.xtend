@@ -23,8 +23,9 @@ class MyDslParsingTest {
 	@Test
 	def void loadModel() {
 		val result = parseHelper.parse('''
-			{} file f1 = "f1.json"
-			
+			{} file json_7 = "json_7.json"
+			add f1, "bidule":"chose"
+			search f1, "city"
 		''')
 		Assertions.assertNotNull(result)
 		val errors = result.eResource.errors
@@ -32,5 +33,7 @@ class MyDslParsingTest {
 		
 		val PythonCompiler cmpPython = new PythonCompiler(result)
 		cmpPython.compileAndRun
+		val JavaCompiler cmpJava = new JavaCompiler(result)
+		//cmpJava.compileAndRun
 	}
 }

@@ -1806,9 +1806,9 @@ rule__Pair__ValueAssignment_2
 	}
 :
 	(
-		{ before(grammarAccess.getPairAccess().getValueValueParserRuleCall_2_0()); }
-		ruleValue
-		{ after(grammarAccess.getPairAccess().getValueValueParserRuleCall_2_0()); }
+		{ before(grammarAccess.getPairAccess().getValueSTRINGTerminalRuleCall_2_0()); }
+		RULE_STRING
+		{ after(grammarAccess.getPairAccess().getValueSTRINGTerminalRuleCall_2_0()); }
 	)
 ;
 finally {

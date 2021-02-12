@@ -260,20 +260,19 @@ rulePair returns [EObject current=null]
 		}
 		(
 			(
+				lv_value_2_0=RULE_STRING
 				{
-					newCompositeNode(grammarAccess.getPairAccess().getValueValueParserRuleCall_2_0());
+					newLeafNode(lv_value_2_0, grammarAccess.getPairAccess().getValueSTRINGTerminalRuleCall_2_0());
 				}
-				lv_value_2_0=ruleValue
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getPairRule());
+						$current = createModelElement(grammarAccess.getPairRule());
 					}
-					set(
+					setWithLastConsumed(
 						$current,
 						"value",
 						lv_value_2_0,
-						"org.xtext.example.mydsl.MyDsl.Value");
-					afterParserOrEnumRuleCall();
+						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)

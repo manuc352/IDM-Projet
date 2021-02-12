@@ -279,9 +279,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * @generated
    */
   @Override
-  public EReference getPair_Value()
+  public EAttribute getPair_Value()
   {
-    return (EReference)pairEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)pairEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -533,7 +533,7 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
 
     pairEClass = createEClass(PAIR);
     createEAttribute(pairEClass, PAIR__KEY);
-    createEReference(pairEClass, PAIR__VALUE);
+    createEAttribute(pairEClass, PAIR__VALUE);
 
     valueEClass = createEClass(VALUE);
 
@@ -617,7 +617,7 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
 
     initEClass(pairEClass, Pair.class, "Pair", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getPair_Key(), ecorePackage.getEString(), "key", null, 0, 1, Pair.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getPair_Value(), this.getValue(), null, "value", null, 0, 1, Pair.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getPair_Value(), ecorePackage.getEString(), "value", null, 0, 1, Pair.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(valueEClass, Value.class, "Value", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

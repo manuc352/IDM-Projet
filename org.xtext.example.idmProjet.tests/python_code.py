@@ -1,4 +1,11 @@
 import pandas as pd
-df = pd.read_json("C:\\Users\\Emmanuel Chauvel\\Desktop\\f1.json")
-print("f1")
-print(df)
+import json
+with open(r".//input//json_7.json", 'r') as f:
+		data = json.load(f)
+		if "city" in f.read():
+ 			print("city is present")
+with open(r"./output_python/json_7.json", 'w') as f:
+    entry = {"bidule":"chose"}
+    data.update(entry)
+    f.seek(0)
+    f.write(str(data))

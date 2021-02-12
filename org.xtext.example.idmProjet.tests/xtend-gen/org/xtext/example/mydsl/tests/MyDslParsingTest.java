@@ -16,6 +16,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.xtext.example.mydsl.myDsl.Json;
+import org.xtext.example.mydsl.tests.JavaCompiler;
 import org.xtext.example.mydsl.tests.MyDslInjectorProvider;
 import org.xtext.example.mydsl.tests.PythonCompiler;
 
@@ -30,8 +31,11 @@ public class MyDslParsingTest {
   public void loadModel() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("{} file f1 = \"f1.json\"");
+      _builder.append("{} file json_7 = \"json_7.json\"");
       _builder.newLine();
+      _builder.append("add f1, \"bidule\":\"chose\"");
+      _builder.newLine();
+      _builder.append("search f1, \"city\"");
       _builder.newLine();
       final Json result = this.parseHelper.parse(_builder);
       Assertions.assertNotNull(result);
@@ -44,6 +48,7 @@ public class MyDslParsingTest {
       Assertions.assertTrue(_isEmpty, _builder_1.toString());
       final PythonCompiler cmpPython = new PythonCompiler(result);
       cmpPython.compileAndRun();
+      final JavaCompiler cmpJava = new JavaCompiler(result);
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }

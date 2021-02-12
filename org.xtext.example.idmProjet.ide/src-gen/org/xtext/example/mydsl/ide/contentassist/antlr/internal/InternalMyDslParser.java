@@ -2120,34 +2120,12 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
             loop7:
             do {
                 int alt7=2;
-                switch ( input.LA(1) ) {
-                case 23:
-                    {
-                    alt7=1;
-                    }
-                    break;
-                case 25:
-                    {
-                    alt7=1;
-                    }
-                    break;
-                case 28:
-                    {
-                    alt7=1;
-                    }
-                    break;
-                case 29:
-                    {
-                    alt7=1;
-                    }
-                    break;
-                case 27:
-                    {
-                    alt7=1;
-                    }
-                    break;
+                int LA7_0 = input.LA(1);
 
+                if ( (LA7_0==23||LA7_0==25||(LA7_0>=27 && LA7_0<=29)) ) {
+                    alt7=1;
                 }
+
 
                 switch (alt7) {
             	case 1 :
@@ -2439,7 +2417,7 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
             // InternalMyDsl.g:775:1: ( rule__Pair__Group__1__Impl rule__Pair__Group__2 )
             // InternalMyDsl.g:776:2: rule__Pair__Group__1__Impl rule__Pair__Group__2
             {
-            pushFollow(FOLLOW_10);
+            pushFollow(FOLLOW_8);
             rule__Pair__Group__1__Impl();
 
             state._fsp--;
@@ -2594,7 +2572,7 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
             // InternalMyDsl.g:829:1: ( rule__JArray__Group__0__Impl rule__JArray__Group__1 )
             // InternalMyDsl.g:830:2: rule__JArray__Group__0__Impl rule__JArray__Group__1
             {
-            pushFollow(FOLLOW_11);
+            pushFollow(FOLLOW_10);
             rule__JArray__Group__0__Impl();
 
             state._fsp--;
@@ -2669,7 +2647,7 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
             // InternalMyDsl.g:856:1: ( rule__JArray__Group__1__Impl rule__JArray__Group__2 )
             // InternalMyDsl.g:857:2: rule__JArray__Group__1__Impl rule__JArray__Group__2
             {
-            pushFollow(FOLLOW_12);
+            pushFollow(FOLLOW_11);
             rule__JArray__Group__1__Impl();
 
             state._fsp--;
@@ -2744,7 +2722,7 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
             // InternalMyDsl.g:883:1: ( rule__JArray__Group__2__Impl rule__JArray__Group__3 )
             // InternalMyDsl.g:884:2: rule__JArray__Group__2__Impl rule__JArray__Group__3
             {
-            pushFollow(FOLLOW_12);
+            pushFollow(FOLLOW_11);
             rule__JArray__Group__2__Impl();
 
             state._fsp--;
@@ -2840,7 +2818,7 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
             // InternalMyDsl.g:910:1: ( rule__JArray__Group__3__Impl rule__JArray__Group__4 )
             // InternalMyDsl.g:911:2: rule__JArray__Group__3__Impl rule__JArray__Group__4
             {
-            pushFollow(FOLLOW_12);
+            pushFollow(FOLLOW_11);
             rule__JArray__Group__3__Impl();
 
             state._fsp--;
@@ -3013,7 +2991,7 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
             // InternalMyDsl.g:964:1: ( rule__JArray__Group_3__0__Impl rule__JArray__Group_3__1 )
             // InternalMyDsl.g:965:2: rule__JArray__Group_3__0__Impl rule__JArray__Group_3__1
             {
-            pushFollow(FOLLOW_10);
+            pushFollow(FOLLOW_12);
             rule__JArray__Group_3__0__Impl();
 
             state._fsp--;
@@ -3168,7 +3146,7 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
             // InternalMyDsl.g:1018:1: ( rule__JNumber__Group__0__Impl rule__JNumber__Group__1 )
             // InternalMyDsl.g:1019:2: rule__JNumber__Group__0__Impl rule__JNumber__Group__1
             {
-            pushFollow(FOLLOW_10);
+            pushFollow(FOLLOW_12);
             rule__JNumber__Group__0__Impl();
 
             state._fsp--;
@@ -3243,7 +3221,7 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
             // InternalMyDsl.g:1045:1: ( rule__JNumber__Group__1__Impl rule__JNumber__Group__2 )
             // InternalMyDsl.g:1046:2: rule__JNumber__Group__1__Impl rule__JNumber__Group__2
             {
-            pushFollow(FOLLOW_10);
+            pushFollow(FOLLOW_12);
             rule__JNumber__Group__1__Impl();
 
             state._fsp--;
@@ -3335,7 +3313,7 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
             // InternalMyDsl.g:1072:1: ( rule__JNumber__Group__2__Impl rule__JNumber__Group__3 )
             // InternalMyDsl.g:1073:2: rule__JNumber__Group__2__Impl rule__JNumber__Group__3
             {
-            pushFollow(FOLLOW_10);
+            pushFollow(FOLLOW_12);
             rule__JNumber__Group__2__Impl();
 
             state._fsp--;
@@ -3431,7 +3409,7 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
             // InternalMyDsl.g:1099:1: ( rule__JNumber__Group__3__Impl rule__JNumber__Group__4 )
             // InternalMyDsl.g:1100:2: rule__JNumber__Group__3__Impl rule__JNumber__Group__4
             {
-            pushFollow(FOLLOW_10);
+            pushFollow(FOLLOW_12);
             rule__JNumber__Group__3__Impl();
 
             state._fsp--;
@@ -5502,25 +5480,21 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Pair__ValueAssignment_2"
-    // InternalMyDsl.g:1803:1: rule__Pair__ValueAssignment_2 : ( ruleValue ) ;
+    // InternalMyDsl.g:1803:1: rule__Pair__ValueAssignment_2 : ( RULE_STRING ) ;
     public final void rule__Pair__ValueAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyDsl.g:1807:1: ( ( ruleValue ) )
-            // InternalMyDsl.g:1808:2: ( ruleValue )
+            // InternalMyDsl.g:1807:1: ( ( RULE_STRING ) )
+            // InternalMyDsl.g:1808:2: ( RULE_STRING )
             {
-            // InternalMyDsl.g:1808:2: ( ruleValue )
-            // InternalMyDsl.g:1809:3: ruleValue
+            // InternalMyDsl.g:1808:2: ( RULE_STRING )
+            // InternalMyDsl.g:1809:3: RULE_STRING
             {
-             before(grammarAccess.getPairAccess().getValueValueParserRuleCall_2_0()); 
-            pushFollow(FOLLOW_2);
-            ruleValue();
-
-            state._fsp--;
-
-             after(grammarAccess.getPairAccess().getValueValueParserRuleCall_2_0()); 
+             before(grammarAccess.getPairAccess().getValueSTRINGTerminalRuleCall_2_0()); 
+            match(input,RULE_STRING,FOLLOW_2); 
+             after(grammarAccess.getPairAccess().getValueSTRINGTerminalRuleCall_2_0()); 
 
             }
 
@@ -6107,9 +6081,9 @@ public class InternalMyDslParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x000000003A800002L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000000800L});
     public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000040660D10L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000000100L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000040660F50L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000040660F50L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000040660D10L});
     public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000180000L});
     public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000200400L});
     public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000001000L});

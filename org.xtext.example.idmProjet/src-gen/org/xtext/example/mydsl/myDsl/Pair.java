@@ -47,25 +47,25 @@ public interface Pair extends EObject
   void setKey(String value);
 
   /**
-   * Returns the value of the '<em><b>Value</b></em>' containment reference.
+   * Returns the value of the '<em><b>Value</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Value</em>' containment reference.
-   * @see #setValue(Value)
+   * @return the value of the '<em>Value</em>' attribute.
+   * @see #setValue(String)
    * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getPair_Value()
-   * @model containment="true"
+   * @model
    * @generated
    */
-  Value getValue();
+  String getValue();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.mydsl.myDsl.Pair#getValue <em>Value</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.example.mydsl.myDsl.Pair#getValue <em>Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Value</em>' containment reference.
+   * @param value the new value of the '<em>Value</em>' attribute.
    * @see #getValue()
    * @generated
    */
-  void setValue(Value value);
+  void setValue(String value);
 
 } // Pair
