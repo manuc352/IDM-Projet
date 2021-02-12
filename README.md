@@ -1,4 +1,4 @@
-# Projet JSON - Projet principal - IDM
+# Projet JSON - Partie principal - IDM
 ## M2 MIAGE - Université Rennes 1 - Maud Garçon & Emmanuel Chauvel
 
 Vous trouverez dans ce Git le code source du projet principal d'IDM.
