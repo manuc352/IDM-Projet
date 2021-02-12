@@ -77,7 +77,7 @@ public class PythonCompiler {
 				+ "    entry = {\""+valuesToAdd.getKey()+"\":\""+ valuesToAdd.getValue()+"\"}\r\n"
 				+ "    data.update(entry)\r\n"
 				+ "    f.seek(0)\n"
-				+ "    f.write(str(data))"
+				+ "    json.dump(data, f)"
 				+ "";
 		
 		

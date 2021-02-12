@@ -27,28 +27,65 @@ public class MyDslParsingTest {
   @Inject
   private ParseHelper<Json> parseHelper;
   
+  private long debut;
+  
+  private int i;
+  
   @Test
   public void loadModel() {
     try {
-      StringConcatenation _builder = new StringConcatenation();
-      _builder.append("{} file json_7 = \"json_7.json\"");
-      _builder.newLine();
-      _builder.append("add f1, \"bidule\":\"chose\"");
-      _builder.newLine();
-      _builder.append("search f1, \"city\"");
-      _builder.newLine();
-      final Json result = this.parseHelper.parse(_builder);
-      Assertions.assertNotNull(result);
-      final EList<Resource.Diagnostic> errors = result.eResource().getErrors();
-      boolean _isEmpty = errors.isEmpty();
-      StringConcatenation _builder_1 = new StringConcatenation();
-      _builder_1.append("Unexpected errors: ");
-      String _join = IterableExtensions.join(errors, ", ");
-      _builder_1.append(_join);
-      Assertions.assertTrue(_isEmpty, _builder_1.toString());
-      final PythonCompiler cmpPython = new PythonCompiler(result);
-      cmpPython.compileAndRun();
-      final JavaCompiler cmpJava = new JavaCompiler(result);
+      this.debut = System.currentTimeMillis();
+      this.i = 1;
+      while ((this.i <= 8)) {
+        {
+          StringConcatenation _builder = new StringConcatenation();
+          _builder.append("{} file json_");
+          String _plus = (_builder.toString() + Integer.valueOf(this.i));
+          StringConcatenation _builder_1 = new StringConcatenation();
+          _builder_1.append(" ");
+          _builder_1.append("= \"json_6.json\"");
+          _builder_1.newLine();
+          _builder_1.append("\t\t\t");
+          _builder_1.append("add json_");
+          String _plus_1 = (_plus + _builder_1);
+          String _plus_2 = (_plus_1 + Integer.valueOf(this.i));
+          StringConcatenation _builder_2 = new StringConcatenation();
+          _builder_2.append(", \"bidule\":\"chose\"");
+          _builder_2.newLine();
+          _builder_2.append("\t\t\t");
+          _builder_2.append("search json_");
+          String _plus_3 = (_plus_2 + _builder_2);
+          String _plus_4 = (_plus_3 + Integer.valueOf(this.i));
+          StringConcatenation _builder_3 = new StringConcatenation();
+          _builder_3.append(", \"city\"");
+          _builder_3.newLine();
+          _builder_3.append("\t\t\t");
+          _builder_3.append("delete json_");
+          String _plus_5 = (_plus_4 + _builder_3);
+          String _plus_6 = (_plus_5 + Integer.valueOf(this.i));
+          StringConcatenation _builder_4 = new StringConcatenation();
+          _builder_4.append(", \"tales\": \"comfortable\"");
+          _builder_4.newLine();
+          String _plus_7 = (_plus_6 + _builder_4);
+          final Json result = this.parseHelper.parse(_plus_7);
+          Assertions.assertNotNull(result);
+          final EList<Resource.Diagnostic> errors = result.eResource().getErrors();
+          boolean _isEmpty = errors.isEmpty();
+          StringConcatenation _builder_5 = new StringConcatenation();
+          _builder_5.append("Unexpected errors: ");
+          String _join = IterableExtensions.join(errors, ", ");
+          _builder_5.append(_join);
+          Assertions.assertTrue(_isEmpty, _builder_5.toString());
+          final PythonCompiler cmpPython = new PythonCompiler(result);
+          cmpPython.compileAndRun();
+          final JavaCompiler cmpJava = new JavaCompiler(result);
+          cmpJava.compileAndRun();
+          this.i++;
+        }
+      }
+      long _currentTimeMillis = System.currentTimeMillis();
+      long _minus = (_currentTimeMillis - this.debut);
+      System.out.println(_minus);
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }

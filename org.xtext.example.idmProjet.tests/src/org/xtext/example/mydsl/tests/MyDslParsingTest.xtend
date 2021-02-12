@@ -20,20 +20,32 @@ class MyDslParsingTest {
 	@Inject
 	ParseHelper<Json> parseHelper
 	
+	long debut
+	int i
+	
 	@Test
 	def void loadModel() {
-		val result = parseHelper.parse('''
-			{} file json_7 = "json_7.json"
-			add f1, "bidule":"chose"
-			search f1, "city"
-		''')
-		Assertions.assertNotNull(result)
-		val errors = result.eResource.errors
-		Assertions.assertTrue(errors.isEmpty, '''Unexpected errors: «errors.join(", ")»''')
+		debut = System.currentTimeMillis();
+		i=1
+		while(i<=8){
+			val result = parseHelper.parse('''
+			{} file json_'''+i+''' = "json_6.json"
+			add json_'''+i+''', "bidule":"chose"
+			search json_'''+i+''', "city"
+			delete json_'''+i+''', "tales": "comfortable"
+			''')
+			Assertions.assertNotNull(result)
+			val errors = result.eResource.errors
+			Assertions.assertTrue(errors.isEmpty, '''Unexpected errors: «errors.join(", ")»''')
 		
-		val PythonCompiler cmpPython = new PythonCompiler(result)
-		cmpPython.compileAndRun
-		val JavaCompiler cmpJava = new JavaCompiler(result)
-		//cmpJava.compileAndRun
+			val PythonCompiler cmpPython = new PythonCompiler(result)
+			cmpPython.compileAndRun
+			val JavaCompiler cmpJava = new JavaCompiler(result)
+			cmpJava.compileAndRun
+			i++
+		}
+		
+		System.out.println(System.currentTimeMillis()-debut);
+		
 	}
 }

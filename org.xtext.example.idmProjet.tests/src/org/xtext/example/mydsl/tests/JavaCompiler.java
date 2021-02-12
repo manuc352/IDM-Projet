@@ -6,12 +6,9 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.List;
 
 
-import org.json.JSONString;
 import org.xtext.example.mydsl.myDsl.Add;
 import org.xtext.example.mydsl.myDsl.Clear;
 import org.xtext.example.mydsl.myDsl.Delete;
@@ -21,7 +18,6 @@ import org.xtext.example.mydsl.myDsl.JsonOperation;
 import org.xtext.example.mydsl.myDsl.Pair;
 import org.xtext.example.mydsl.myDsl.Search;
 
-import com.google.common.io.Files;
 
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -74,11 +70,15 @@ public class JavaCompiler {
 			}
 			else if (op instanceof Search) {
 				searchString = ((Search) op).getKey();
-				System.out.println(jsonObject.get(searchString));
+				//System.out.println(jsonObject.get(searchString));
 			}
 			else if (op instanceof Delete) {
 				pairToDelete = ((Delete) op).getPair();
 				jsonObject.remove(pairToDelete.getKey(), pairToDelete.getValue());
+				System.out.println(pairToDelete.getKey());
+				file = new FileWriter(outputPath+jsonFilename+".json");
+				file.write(jsonObject.toJSONString());
+				file.close();
 				
 			}
 			else if (op instanceof Clear) {
